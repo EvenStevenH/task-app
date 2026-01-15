@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="icon" href="#">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <form class="container" id="taskForm" onsubmit="return false">
+            <h1>To-Do List</h1>
+
+            <label for="taskInputName">Task Name:</label>
+            <input type="text" id="taskInputName" name="taskInputName" placeholder="Start homework..." tabindex="1">
+
+            <label for="taskInputDeadline">Deadline:</label>
+            <input type="date" id="taskInputDeadline" name="taskInputDeadline">
+
+            <div class="dropdown-container">
+                <div>
+                    <label for="taskInputCategory">Category:</label>
+                    <select id="taskInputCategory" name="taskInputCategory">
+                        <option value="General">General</option>
+                        <option value="Home">Home</option>
+                        <option value="School">School</option>
+                        <option value="Work">Work</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="taskInputStatus">Status:</label>
+                    <select id="taskInputStatus" name="taskInputStatus">
+                        <option value="Not Started">Not Started</option>
+                        <option value="In progress">In Progress</option>
+                        <option value="Canceled">Canceled</option>
+                        <option value="Done">Done</option>
+                    </select>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="button-container">
+                <button type="submit" id="addTaskButton">Add Task</button>
+                <button type="submit" id="refreshTaskButton">Refresh</button>
+            </div>
+
+            <label for="taskFilterStatus">Filter Current Tasks:</label>
+            <select id="taskFilterStatus" name="taskFilterStatus">
+                <option value="all">All</option>
+                <option value="not-started">Not Started</option>
+                <option value="in-progress">In Progress</option>
+                <option value="canceled">Canceled</option>
+                <option value="done">Done</option>
+            </select>
+
+            <p><span id="task-counter">0</span> Matching Task(s)</p>
+
+        </form>
+
+        <div class="container" id="task-container">
+            <div id="message" class="hide">
+                <p>Make a task to get started!</p>
+                <p>Overdue tasks are checked every minute. Use "refresh" to do so manually!</p>
+            </div>
+            <ul id="task-list">
+            </ul>
+        </div>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>
